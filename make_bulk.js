@@ -8,7 +8,7 @@ const make_txt = function (starting_id,num_of_sets,prefix="CON2FAB",root='./task
         subs.push(prefix + "0".repeat(4-String(sub_id).length) + String(sub_id))
     }
     subs = subs.join('\n')
-    fs.writeFile(root + "/memory_available.txt", subs, function(err) {
+    fs.writeFile(root + "/memory_available2.txt", subs, function(err) {
         if(err) {
             return console.log(err);
         }
@@ -36,7 +36,7 @@ const make_bulk = function (starting_id=0,num_of_sets=10,prefix="CON2FAB",root='
     process_users(starting_id)
         .then(function () {
         generated_sets = generated_sets.join('\n')
-        fs.writeFile(root + "/memory_available.txt", generated_sets, function(err) {
+        fs.writeFile(root + "/memory_available2.txt", generated_sets, function(err) {
             if(err) {
                 return console.log(err);
             }
@@ -63,7 +63,7 @@ const make_list = function (list_of_sets,prefix="CON2FAB",root='./task_sets') {
     process_users(list_of_sets.shift())
         .then(function () {
             generated_sets = generated_sets.join('\n')
-            fs.writeFile(root + "/memory_available.txt", generated_sets, function(err) {
+            fs.writeFile(root + "/memory_available2.txt", generated_sets, function(err) {
                 if(err) {
                     return console.log(err);
                 }
@@ -75,4 +75,4 @@ const make_list = function (list_of_sets,prefix="CON2FAB",root='./task_sets') {
 
 
 
-make_bulk(0,200)
+make_bulk(200,100)
