@@ -1,7 +1,7 @@
 const fs = require('fs');
 var ffmpeg = require('fluent-ffmpeg');
 
-let audio_dir = "E:\\Documents\\Academia\\Studies\\Synth single Notes\\12EDO\\"
+let audio_dir = "C:\\Users\\Michael\\Documents\\Academia\\Studies\\Synth single Notes\\12EDO\\"
 const make_audio = function (stimuli,path) {
     return new Promise(function (resolve, reject) {
         // merge file

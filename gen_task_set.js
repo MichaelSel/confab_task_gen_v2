@@ -1,7 +1,9 @@
 const fs = require('fs');
 const csv = require('csv-parser');
-const make_stimuli = require('./make_stimuli')
-const make_practice = require('./make_practice_stimuli')
+// const make_stimuli = require('./make_stimuli')
+const make_stimuli = require('./make_stimuli_control')
+// const make_practice = require('./make_practice_stimuli')
+const make_practice = require('./make_practice_stimuli_control')
 const make_folder = require('./make_folder')
 const split_stimuli_to_blocks = require('./split_stimuli_to_blocks')
 const make_block_csv = require('./make_block_csv')
