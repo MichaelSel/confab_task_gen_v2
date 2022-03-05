@@ -117,13 +117,20 @@ const make_stimuli = function (subject_id, how_many_multiples_of_15=1) {
         let transpose_1 = rand_int_in_range(-3,3)
         let transpose_2 = rand_int_in_range(-3,3)
         let transpose_3 = rand_int_in_range(-3,3)
-        let probe_melody1 = make_probe(probe_pitches).map(p=>p+transpose_1)
-        let probe_melody2 = make_probe(probe_pitches).map(p=>p+transpose_2)
-        let probe_melody3 = make_probe(probe_pitches).map(p=>p+transpose_3)
+        let probe_melody1 = make_probe(probe_pitches)
+        let probe_melody2 = make_probe(probe_pitches)
+        let probe_melody3 = make_probe(probe_pitches)
         let notes_not_in_last_quarter = probe_pitches.filter(n=>probe_melody1.slice(Math.floor(probe_melody1.length*0.75)).indexOf(n)==-1) //Not in last quarter
         notes_not_in_last_quarter = notes_not_in_last_quarter.filter(n=>n!=probe_melody1[0]) //or 1st note
-
         let random_in_melody = notes_not_in_last_quarter[rand_int_in_range(0,notes_not_in_last_quarter.length-1)]
+
+        //Transpose probes
+        probe_melody1 = probe_melody1.map(p=>p+transpose_1)
+        probe_melody2 = probe_melody2.map(p=>p+transpose_2)
+        probe_melody3 = probe_melody3.map(p=>p+transpose_3)
+
+
+
         stimuli.push({
             subject_id:subject_id,
             set: set.pitches,

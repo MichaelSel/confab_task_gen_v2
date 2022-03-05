@@ -127,6 +127,12 @@ const make_practice_stimuli = function (subject_id) {
         let probe_melody3 = make_probe(probe_pitches).map(p=>p+transpose_3)
         let notes_not_in_last_quarter = probe_pitches.filter(n=>probe_melody1.slice(Math.floor(probe_melody1.length*0.75)).indexOf(n)==-1)
         let random_in_melody = notes_not_in_last_quarter[rand_int_in_range(0,notes_not_in_last_quarter.length-1)]
+
+        probe_melody1 = probe_melody1.map(p=>p+transpose_1)
+        probe_melody2 = probe_melody2.map(p=>p+transpose_2)
+        probe_melody3 = probe_melody3.map(p=>p+transpose_3)
+
+
         stimuli.push({
             subject_id:subject_id,
             set: set.pitches,
