@@ -124,6 +124,7 @@ const make_stimuli = function (subject_id, how_many_multiples_of_15=1) {
         notes_not_in_last_quarter = notes_not_in_last_quarter.filter(n=>n!=probe_melody1[0]) //or 1st note
         let random_in_melody = notes_not_in_last_quarter[rand_int_in_range(0,notes_not_in_last_quarter.length-1)]
 
+        /** Moved this down here on 3/5/2022. Previously the random note in melody was assigned after this, which caused a bug.*/
         //Transpose probes
         probe_melody1 = probe_melody1.map(p=>p+transpose_1)
         probe_melody2 = probe_melody2.map(p=>p+transpose_2)
